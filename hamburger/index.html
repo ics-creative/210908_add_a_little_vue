@@ -40,17 +40,21 @@
           >
         </button>
         <transition name="fade">
-          <div class="bg" v-show="isActive"></div>
-        </transition>
-        <transition name="fade">
-          <nav class="navigation" v-show="isActive">
-            <ul class="navigation_list">
-              <li class="navigation_item">Home</li>
-              <li class="navigation_item">About</li>
-              <li class="navigation_item">Works</li>
-              <li class="navigation_item">Contact</li>
-            </ul>
-          </nav>
+          <div
+            class="navigationWrapper"
+            v-show="isActive"
+            style="display: none"
+          >
+            <div class="bg"></div>
+            <nav class="navigation">
+              <ul class="navigation_list">
+                <li class="navigation_item">Home</li>
+                <li class="navigation_item">About</li>
+                <li class="navigation_item">Works</li>
+                <li class="navigation_item">Contact</li>
+              </ul>
+            </nav>
+          </div>
         </transition>
       </div>
       <p class="back"><a href="../">目次に戻る</a></p>
