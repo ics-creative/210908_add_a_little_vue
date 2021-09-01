@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta name="viewport" content="width=640" />
+    <meta charset="UTF-8" />
+    <title>チェックボックス | チョイ足しVue.jsでサクッと動的要素</title>
+    <link rel="stylesheet" href="../assets/style/style.css" />
+  </head>
+  <body>
+    <div class="contents">
+      <h1>アンケート</h1>
+      <p>興味のある技術に3つ以上チェックを入れてください</p>
+      <div id="app">
+        <form>
+          <div class="checkBoxList">
+            <label
+              ><input
+                type="checkbox"
+                v-model="checkButtons.react"
+              />React</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                v-model="checkButtons.angular"
+              />Angular</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                v-model="checkButtons.vuejs"
+              />Vue.js</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                v-model="checkButtons.jquery"
+              />jQuery</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                v-model="checkButtons.nextjs"
+              />Next.js</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                v-model="checkButtons.nuxtjs"
+              />Nuxt.js</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                v-model="checkButtons.typescript"
+              />TypeScript</label
+            >
+          </div>
+          <button
+            type="button"
+            :disabled="!isButtonEnabled"
+            class="checkBoxList_button"
+          >
+            送信
+          </button>
+          <p>※どこにもデータは送信されません。</p>
+        </form>
+      </div>
+    </div>
+
+    <script type="module">
+      import {
+        ref,
+        computed,
+        createApp,
+        reactive,
+      } from "https://unpkg.com/vue@3.2.4/dist/vue.esm-browser.js";
+      const app = createApp({
+        setup() {
+          // チェックボックスの状態です
+          const checkButtons = reactive({
+            react: false,
+            angular: false,
+            vuejs: false,
+            jquery: false,
+            nextjs: false,
+            nuxtjs: false,
+            typescript: false,
+          });
+
+          // ボタンが押せるかどうか
+          const isButtonEnabled = computed(
+            () =>
+              Object.values(checkButtons).filter((button) => button === true)
+                .length >= 3
+          );
+          return { checkButtons, isButtonEnabled };
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>

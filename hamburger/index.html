@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta name="viewport" content="width=640" />
+    <meta charset="UTF-8" />
+    <title>ハンバーガーボタン | チョイ足しVue.jsでサクッと動的要素</title>
+    <link rel="stylesheet" href="../assets/style/style.css" />
+  </head>
+  <body>
+    <div class="contents">
+      <h1>Headline</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum,
+        rerum, vero. Cupiditate ea harum totam vero! Aperiam beatae culpa ea
+        impedit obcaecati odit officia omnis porro, quam quasi, quidem
+        similique!
+      </p>
+      <div id="app">
+        <button class="hamburgerButton" @click="isActive = !isActive">
+          <transition name="fade">
+            <img
+              class="hamburgerButton__open"
+              src="../assets/images/open.svg"
+              alt="OPEN"
+              width="32"
+              v-show="!isActive"
+            />
+          </transition>
+          <transition name="fade">
+            <img
+              class="hamburgerButton__close"
+              src="../assets/images/close.svg"
+              alt="CLOSE"
+              width="32"
+              v-show="isActive"
+            />
+          </transition>
+          <span class="hamburgerButton__label"
+            >{{ isActive ? "Close" : "Menu"}}</span
+          >
+        </button>
+        <transition name="fade">
+          <div class="bg" v-show="isActive"></div>
+        </transition>
+        <transition name="fade">
+          <nav class="navigation" v-show="isActive">
+            <ul class="navigation_list">
+              <li class="navigation_item">Home</li>
+              <li class="navigation_item">About</li>
+              <li class="navigation_item">Works</li>
+              <li class="navigation_item">Contact</li>
+            </ul>
+          </nav>
+        </transition>
+      </div>
+    </div>
+
+    <script type="module">
+      import {
+        ref,
+        createApp,
+      } from "https://unpkg.com/vue@3.2.4/dist/vue.esm-browser.js";
+      const app = createApp({
+        setup() {
+          // ハンバーガーボタンの状態です
+          const isActive = ref(false);
+
+          return { isActive };
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "吾輩は猫である",
+    "author": "夏目漱石",
+    "thumbnail": "https://picsum.photos/id/1/300/200"
+  },
+  {
+    "id": 2,
+    "name": "三毛猫ホームズの推理",
+    "author": "赤川次郎",
+    "thumbnail": "https://picsum.photos/id/74/300/200"
+  },
+  {
+    "id": 3,
+    "name": "羅生門",
+    "author": "芥川龍之介",
+    "thumbnail": "https://picsum.photos/id/66/300/200"
+  },
+  {
+    "id": 4,
+    "name": "走れメロス",
+    "author": "太宰治",
+    "thumbnail": "https://picsum.photos/id/46/300/200"
+  },
+  {
+    "id": 5,
+    "name": "シャーロック・ホームズの冒険",
+    "author": "コナン・ドイル",
+    "thumbnail": "https://picsum.photos/id/54/300/200"
+  },
+  {
+    "id": 6,
+    "name": "山月記",
+    "author": "中島敦",
+    "thumbnail": "https://picsum.photos/id/96/300/200"
+  },
+  {
+    "id": 7,
+    "name": "伊豆の踊子",
+    "author": "川端康成",
+    "thumbnail": "https://picsum.photos/id/85/300/200"
+  },
+  {
+    "id": 8,
+    "name": "怪盗紳士ルパン",
+    "author": "モーリス・ルブラン",
+    "thumbnail": "https://picsum.photos/id/103/300/200"
+  },
+  {
+    "id": 9,
+    "name": "竜馬がゆく",
+    "author": "司馬遼太郎",
+    "thumbnail": "https://picsum.photos/id/39/300/200"
+  },
+  {
+    "id": 10,
+    "name": "舞姫",
+    "author": "森鷗外",
+    "thumbnail": "https://picsum.photos/id/104/300/200"
+  },
+  {
+    "id": 11,
+    "name": "たけくらべ",
+    "author": "樋口一葉",
+    "thumbnail": "https://picsum.photos/id/21/300/200"
+  },
+  {
+    "id": 12,
+    "name": "浮雲",
+    "author": "二葉亭四迷",
+    "thumbnail": "https://picsum.photos/id/30/300/200"
+  },
+  {
+    "id": 13,
+    "name": "源氏物語",
+    "author": "紫式部",
+    "thumbnail": "https://picsum.photos/id/142/300/200"
+  },
+  {
+    "id": 14,
+    "name": "金閣寺",
+    "author": "三島由紀夫",
+    "thumbnail": "https://picsum.photos/id/65/300/200"
+  },
+  {
+    "id": 15,
+    "name": "犬神家の一族",
+    "author": "横溝正史",
+    "thumbnail": "https://picsum.photos/id/124/300/200"
+  },
+  {
+    "id": 16,
+    "name": "怪人二十面相",
+    "author": "江戸川乱歩",
+    "thumbnail": "https://picsum.photos/id/32/300/200"
+  },
+  {
+    "id": 17,
+    "name": "三四郎",
+    "author": "夏目漱石",
+    "thumbnail": "https://picsum.photos/id/52/300/200"
+  },
+  {
+    "id": 18,
+    "name": "人間失格",
+    "author": "太宰治",
+    "thumbnail": "https://picsum.photos/id/187/300/200"
+  },
+  {
+    "id": 19,
+    "name": "雪国",
+    "author": "川端康成",
+    "thumbnail": "https://picsum.photos/id/87/300/200"
+  },
+  {
+    "id": 20,
+    "name": "河童",
+    "author": "芥川龍之介",
+    "thumbnail": "https://picsum.photos/id/22/300/200"
+  }
+]

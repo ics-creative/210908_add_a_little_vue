@@ -1,0 +1,19 @@
+{
+  "name": "petite-vue",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "sass": "sass assets/style/style.scss assets/style/style.css --watch",
+    "prettier": "prettier \"**/*.{css,scss,ts,js,html}\" --write",
+    "stylelint": "stylelint --fix **/*.{css,scss}",
+    "format": "yarn run prettier && yarn run stylelint"
+  },
+  "devDependencies": {
+    "prettier": "2.3.2",
+    "sass": "1.35.2",
+    "stylelint": "13.13.1",
+    "stylelint-config-prettier": "8.0.2",
+    "stylelint-config-recess-order": "2.4.0",
+    "stylelint-prettier": "1.2.0"
+  }
+}
