@@ -16,6 +16,10 @@
   }
 }
 
+.back {
+  margin: 32px auto;
+}
+
 /**
  * Transitions
  */
@@ -51,6 +55,19 @@
 
 .list-enter-active {
   transition: opacity 1s 0.4s, transform 1s 0.4s;
+}
+
+/**
+ * 目次ページ
+ */
+.index {
+  h1 {
+    margin-bottom: 8px;
+    font-size: 22px;
+  }
+  &_link {
+    margin-bottom: 32px;
+  }
 }
 
 /**
@@ -165,6 +182,7 @@
 
 .pagination {
   position: relative;
+  height: 40px;
   &_button {
     position: absolute;
     width: 120px;
