@@ -40,9 +40,8 @@
 
 .list-leave-active {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
 }
 
 .list-enter-from {
@@ -51,11 +50,12 @@
 
 .list-leave-active,
 .list-move {
-  transition: opacity 0.3s, transform 1s;
+  /* 移動を非常に遅くすることで動かないように見せる */
+  transition: opacity 0.3s, transform 99999s;
 }
 
 .list-enter-active {
-  transition: opacity 1s 0.4s, transform 1s 0.4s;
+  transition: opacity 1s, transform 1s;
 }
 
 /**
@@ -84,8 +84,7 @@
   border: none;
   appearance: none;
 }
-.hamburgerButton__open,
-.hamburgerButton__close {
+.hamburgerButton__open, .hamburgerButton__close {
   position: absolute;
   top: 50%;
   left: 50%;
