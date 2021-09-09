@@ -15,7 +15,7 @@
         <div v-if="books">
           <transition-group name="list" tag="ul" class="booksList">
             <li
-              v-for="book in getCurrentBooks"
+              v-for="book in currentBooks"
               :key="book.id"
               class="booksList_item"
             >
@@ -70,7 +70,7 @@
           const pagination = ref(1);
 
           // ページネーションに基づく、表示する書籍のリストです
-          const getCurrentBooks = computed(() => {
+          const currentBooks = computed(() => {
             return books.value.slice(
               (pagination.value - 1) * PER_PAGE,
               pagination.value * PER_PAGE
@@ -104,7 +104,7 @@
             PER_PAGE,
             books,
             pagination,
-            getCurrentBooks,
+            currentBooks,
             incrementPagination,
             decrementPagination,
           };

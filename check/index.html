@@ -16,43 +16,43 @@
             <label
               ><input
                 type="checkbox"
-                v-model="checkButtonState.react"
+                v-model="checkBoxState.react"
               />React</label
             >
             <label
               ><input
                 type="checkbox"
-                v-model="checkButtonState.angular"
+                v-model="checkBoxState.angular"
               />Angular</label
             >
             <label
               ><input
                 type="checkbox"
-                v-model="checkButtonState.vuejs"
+                v-model="checkBoxState.vuejs"
               />Vue.js</label
             >
             <label
               ><input
                 type="checkbox"
-                v-model="checkButtonState.jquery"
+                v-model="checkBoxState.jquery"
               />jQuery</label
             >
             <label
               ><input
                 type="checkbox"
-                v-model="checkButtonState.nextjs"
+                v-model="checkBoxState.nextjs"
               />Next.js</label
             >
             <label
               ><input
                 type="checkbox"
-                v-model="checkButtonState.nuxtjs"
+                v-model="checkBoxState.nuxtjs"
               />Nuxt.js</label
             >
             <label
               ><input
                 type="checkbox"
-                v-model="checkButtonState.typescript"
+                v-model="checkBoxState.typescript"
               />TypeScript</label
             >
           </div>
@@ -78,7 +78,7 @@
       const app = createApp({
         setup() {
           // チェックボックスの状態です
-          const checkButtonState = reactive({
+          const checkBoxState = reactive({
             react: false,
             angular: false,
             vuejs: false,
@@ -91,10 +91,10 @@
           // ボタンが押せるかどうか
           const isButtonEnabled = computed(
             () =>
-              Object.values(checkButtonState).filter((button) => button === true)
+              Object.values(checkBoxState).filter((button) => button === true)
                 .length >= 3
           );
-          return { checkButtonState, isButtonEnabled };
+          return { checkBoxState, isButtonEnabled };
         },
       });
       app.mount("#app");
