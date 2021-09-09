@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta name="viewport" content="width=640" />
+    <meta charset="UTF-8" />
+    <title>
+      読み込み終わるまでは非表示 | チョイ足しVue.jsでサクッと動的要素
+    </title>
+    <link rel="stylesheet" href="../assets/style/style.css" />
+  </head>
+  <body>
+    <div class="contents">
+      <h1 class="contents_title">本の一覧</h1>
+      <div id="app" class="hideBeforeVue">
+        <div v-if="books">
+          <transition-group name="list" tag="ul" class="booksList">
+            <li
+              v-for="book in getCurrentBooks"
+              :key="book.id"
+              class="booksList_item"
+            >
+              <div>
+                <img :src="book.thumbnail" :alt="book.name" width="300" height="200" />
+              </div>
+              <h2 class="booksList_item_title">{{ book.name }}</h2>
+              <p class="booksList_item_author">{{ book.author }}</p>
+            </li>
+          </transition-group>
+          <p class="pagination">
+            <transition name="fade">
+              <button
+                @click="incrementPagination"
+                class="pagination_button pagination_button__next"
+                v-if="pagination+1 <= Math.ceil(books.length / PER_PAGE)"
+              >
+                進む
+              </button>
+            </transition>
+            <transition name="fade">
+              <button
+                class="pagination_button pagination_button__prev"
+                @click="decrementPagination"
+                v-if="pagination > 1"
+              >
+                戻る
+              </button>
+            </transition>
+          </p>
+        </div>
+      </div>
+      <p class="back"><a href="../">目次に戻る</a></p>
+    </div>
+
+    <script type="module">
+      import {
+        ref,
+        computed,
+        createApp,
+        onMounted,
+      } from "https://unpkg.com/vue@3.2.4/dist/vue.esm-browser.js";
+      const app = createApp({
+        setup() {
+          // Vue.jsのセットアップが終わるまで非表示
+          document.querySelector(".hideBeforeVue").classList.remove("hideBeforeVue")
+          // 1ページあたりの表示数です
+          const PER_PAGE = 4;
+
+          // 書籍のデータです
+          const books = ref(null);
+
+          // 現在のページネーションです
+          const pagination = ref(1);
+
+          // ページネーションに基づく、表示する書籍のリストです
+          const getCurrentBooks = computed(() => {
+            return books.value.slice(
+              (pagination.value - 1) * PER_PAGE,
+              pagination.value * PER_PAGE
+            );
+          });
+
+          /**
+           * ページを進めます
+           */
+          const incrementPagination = () => {
+            pagination.value++;
+          };
+
+          /**
+           * ページを戻ります
+           */
+          const decrementPagination = () => {
+            pagination.value--;
+          };
+
+          /**
+           * マウント時に書籍データを取得します
+           */
+          onMounted(async () => {
+            const result = await fetch("../assets/json/data.json");
+            const jsonData = await result.json();
+            books.value = jsonData;
+          });
+
+          return {
+            PER_PAGE,
+            books,
+            pagination,
+            getCurrentBooks,
+            incrementPagination,
+            decrementPagination,
+          };
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>

@@ -21,6 +21,10 @@
   margin: 32px auto;
 }
 
+.hideBeforeVue {
+  visibility: hidden;
+}
+
 /**
  * Transitions
  */
