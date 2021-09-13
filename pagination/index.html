@@ -89,6 +89,9 @@
            * ページを進めます
            */
           const incrementPagination = () => {
+            if (pagination.value >= Math.ceil(books.value.length / PER_PAGE)) {
+              return;
+            }
             pagination.value++;
           };
 
@@ -96,6 +99,9 @@
            * ページを戻ります
            */
           const decrementPagination = () => {
+            if (pagination.value === 1) {
+              return;
+            }
             pagination.value--;
           };
 
