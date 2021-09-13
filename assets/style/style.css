@@ -88,7 +88,8 @@
   border: none;
   appearance: none;
 }
-.hamburgerButton__open, .hamburgerButton__close {
+.hamburgerButton__open,
+.hamburgerButton__close {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -203,6 +204,12 @@
   position: relative;
   height: 40px;
 }
+.pagination_num {
+  margin: 16px 0;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
 .pagination_button {
   position: absolute;
   width: 120px;
@@ -216,5 +223,3 @@
 .pagination_button__next {
   right: 0;
 }
-
-/*# sourceMappingURL=style.css.map */

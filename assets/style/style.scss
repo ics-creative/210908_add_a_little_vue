@@ -210,6 +210,12 @@
 .pagination {
   position: relative;
   height: 40px;
+  &_num {
+    margin: 16px 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
   &_button {
     position: absolute;
     width: 120px;

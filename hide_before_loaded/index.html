@@ -20,12 +20,20 @@
               class="booksList_item"
             >
               <div>
-                <img :src="book.thumbnail" :alt="book.name" width="300" height="200" />
+                <img
+                  :src="book.thumbnail"
+                  :alt="book.name"
+                  width="300"
+                  height="200"
+                />
               </div>
               <h2 class="booksList_item_title">{{ book.name }}</h2>
               <p class="booksList_item_author">{{ book.author }}</p>
             </li>
           </transition-group>
+          <div class="pagination_num">
+            {{pagination}} / {{Math.ceil(books.length / PER_PAGE)}}
+          </div>
           <p class="pagination">
             <transition name="fade">
               <button
@@ -61,7 +69,9 @@
       const app = createApp({
         setup() {
           // Vue.jsのセットアップが終わるまで非表示
-          document.querySelector(".hideBeforeVue").classList.remove("hideBeforeVue")
+          document
+            .querySelector(".hideBeforeVue")
+            .classList.remove("hideBeforeVue");
           // 1ページあたりの表示数です
           const PER_PAGE = 4;
 
