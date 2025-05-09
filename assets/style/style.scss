@@ -20,10 +20,9 @@
   margin: 32px auto;
 }
 
-.hideBeforeVue {
+[v-cloak] {
   visibility: hidden;
 }
-
 /**
  * Transitions
  */

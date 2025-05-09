@@ -16,43 +16,50 @@
             <label
               ><input
                 type="checkbox"
-                v-model="checkBoxState.react"
+                value="react"
+                v-model="checkBoxState"
               />React</label
             >
             <label
               ><input
                 type="checkbox"
-                v-model="checkBoxState.angular"
+                value="angular"
+                v-model="checkBoxState"
               />Angular</label
             >
             <label
               ><input
                 type="checkbox"
-                v-model="checkBoxState.vuejs"
+                value="vuejs"
+                v-model="checkBoxState"
               />Vue.js</label
             >
             <label
               ><input
                 type="checkbox"
-                v-model="checkBoxState.jquery"
+                value="jquery"
+                v-model="checkBoxState"
               />jQuery</label
             >
             <label
               ><input
                 type="checkbox"
-                v-model="checkBoxState.nextjs"
+                value="nextjs"
+                v-model="checkBoxState"
               />Next.js</label
             >
             <label
               ><input
                 type="checkbox"
-                v-model="checkBoxState.nuxtjs"
+                value="nuxtjs"
+                v-model="checkBoxState"
               />Nuxt.js</label
             >
             <label
               ><input
                 type="checkbox"
-                v-model="checkBoxState.typescript"
+                value="typescript"
+                v-model="checkBoxState"
               />TypeScript</label
             >
           </div>
@@ -73,26 +80,16 @@
       import {
         computed,
         createApp,
-        reactive,
-      } from "https://unpkg.com/vue@3.2.4/dist/vue.esm-browser.prod.js";
+        ref,
+      } from "https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js";
       const app = createApp({
         setup() {
           // チェックボックスの状態です
-          const checkBoxState = reactive({
-            react: false,
-            angular: false,
-            vuejs: false,
-            jquery: false,
-            nextjs: false,
-            nuxtjs: false,
-            typescript: false,
-          });
+          const checkBoxState = ref([]);
 
           // ボタンが押せるかどうか
           const isButtonEnabled = computed(
-            () =>
-              Object.values(checkBoxState).filter((button) => button === true)
-                .length >= 3
+            () => checkBoxState.value.length >= 3
           );
           return { checkBoxState, isButtonEnabled };
         },
