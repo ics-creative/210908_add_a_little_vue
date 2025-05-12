@@ -58,14 +58,15 @@
       </div>
       <p class="back"><a href="../">目次に戻る</a></p>
     </div>
-
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js"
+        }
+      }
+    </script>
     <script type="module">
-      import {
-        ref,
-        computed,
-        createApp,
-        onMounted,
-      } from "https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js";
+      import { ref, computed, createApp, onMounted } from "vue";
       const app = createApp({
         setup() {
           // 1ページあたりの表示数です
